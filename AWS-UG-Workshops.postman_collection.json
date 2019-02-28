@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "642cd418-bdb3-4810-a460-79f883783d34",
+		"name": "AWS-UG-Workshops",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get or create license",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"app_id\": \"id1\",\n    \"app_token\" : \"token1\",\n    \"name\" : \"student\",\n    \"machine_key\" : \"26\"\n}"
+				},
+				"url": {
+					"raw": "https://{{url}}/{{stage}}/",
+					"protocol": "https",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"{{stage}}",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get licenses for an app",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "thisismytokenvalue",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{url}}/{{stage}}/?app_id=id1&app_token=token1",
+					"protocol": "https",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"{{stage}}",
+						""
+					],
+					"query": [
+						{
+							"key": "app_id",
+							"value": "id1"
+						},
+						{
+							"key": "app_token",
+							"value": "token1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save issue/message",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"applicationId\": \"your-application-id\",\n  \"userName\": \"AWS User\",\n  \"message\":  \"I love this workshop\"\n}"
+				},
+				"url": {
+					"raw": "https://{{url}}/{{stage}}/issue",
+					"protocol": "https",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"{{stage}}",
+						"issue"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get issues/messages for an app",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{url}}/{{stage}}/issue/your-application-id",
+					"protocol": "https",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"{{stage}}",
+						"issue",
+						"your-application-id"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
