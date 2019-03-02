@@ -128,7 +128,7 @@ In this task you will create GET API to retrieve applications comments or issues
 ![img](img/issue_resource.png)
 
 2. Click **Actions** and select **Create resource**.
-3. Enter "applicationId" as a **Resource name** and "{applicationId}" as a **Resource Path**.
+3. Enter "applicationId" as a **Resource name** and "{applicationid}" as a **Resource Path**.
 
 ![img](img/child_resource.png)
 
